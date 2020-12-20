@@ -29,6 +29,8 @@ namespace Lab4_Game
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ArkanoidForm_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.ArkanoidForm_KeyUp);
             this.KeyPreview = true;
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.timer1.Tick += new EventHandler(this.Update);
 
             Init();
@@ -37,6 +39,7 @@ namespace Lab4_Game
         void Init()
         {
             spriteSheet = new Bitmap("sprites/spritesheet1.png");
+            this.TransparencyKey = Color.Blue;
             background = new Bitmap("sprites/background-sky.png");
             game = new Game(ref spriteSheet);
 
